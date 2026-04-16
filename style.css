@@ -1,0 +1,199 @@
+/* Perfect Professional Bootstrap Task Manager - Simple & Sweet */
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --success-light: rgba(25, 135, 84, 0.08);
+    --border-radius: 16px;
+    --spacing: 1.5rem;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--primary-gradient) !important;
+    min-height: 100vh;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1rem;
+}
+
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.90);
+    transition: all 0.3s ease;
+    
+}
+
+.card:hover {
+    box-shadow: 0 8px 48px rgba(0, 0, 0, 0.18);
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background: var(--primary-gradient) !important;
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+    padding: var(--spacing) 0;
+}
+
+.card-body {
+    padding: var(--spacing) !important;
+}
+.input-group {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.90);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border-color: black;
+    border-width: 2px;
+}
+
+.input-group .form-control {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    box-shadow: none;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.input-group .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.2) !important;
+}
+
+.input-group .btn {
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+#taskList {
+    margin-top: 1rem;
+}
+
+.list-group-item {
+    border: none !important;
+    margin-bottom: 0.75rem;
+    padding: 1.125rem 1.5rem !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.90);
+    transition: all 0.25s ease;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.list-group-item:last-child {
+    margin-bottom: 0;
+}
+
+.list-group-item:hover:not(.completed) {
+    background: #f8faff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(4px);
+}
+
+.list-group-item.completed {
+    background: var(--success-light) !important;
+    border-left: 5px solid #10b981 !important;
+}
+
+.form-check-input {
+    width: 1.50rem;
+    height: 1.50rem;
+    flex-shrink: 0;
+    border-width: 2px;
+}
+
+
+.form-check-input:checked {
+    background-color: #10b981;
+    border-color: #000000;
+    
+}
+
+.task-text {
+    font-weight: 500;
+    font-size: 24px;
+    margin: 0;
+    flex: 1;
+    line-height: 1.4;
+}
+
+.task-text.completed {
+    text-decoration: line-through !important;
+    color: #6b7280 !important;
+}
+
+.completed-badge {
+    font-size: 0.75rem !important;
+    font-weight: 600;
+    animation: pulse 2.5s ease-in-out infinite;
+    padding: 0.25rem 0.5rem;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+.btn-danger {
+    border-radius: 10px !important;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem !important;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+#emptyState {
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.list-group-item,
+#emptyState {
+    animation: fadeIn 0.35s ease-out;
+}
+
+/* Professional Mobile */
+@media (max-width: 576px) {
+    .container {
+        padding: 0;
+    }
+
+    .card-body {
+        padding: 1.25rem !important;
+    }
+
+    .list-group-item {
+        padding: 1rem !important;
+        gap: 0.75rem;
+    }
+}
